@@ -1,14 +1,46 @@
-# Cryptocurrancy-Project
-## Project Description
-A web based fincance application CoinBear.
+# CryptoTrack
 
-This project was designed to allow users to track and retrieve desired crypto related fincancial information with ease. The front-end was designed with the **ReactJS** library and was styled using the **Materials UI** component library.
+A React-based cryptocurrency tracking dashboard that lets users monitor live prices, market data, and price history for the top 250 coins by market cap.
 
-## Run the Project
-1. Download the repository file.
-2. Open respository file in a valid IDE.
-3. Navigate to crypto_project directory and run yarn install.
-4. Run yarn start in the crypto_project directory to start the ReactJS app.
+## Features
 
-## Gallery
-![alt text](/ProjPic.PNG)
+- **Market Overview** — Bitcoin price chart with 1D / 7D / 1M / 3M period selector alongside a Top Gainers / Top Losers panel
+- **Crypto List** — Sortable, filterable, paginated table of the top 250 coins showing rank, price, 24h change (% and AUD value), and market cap
+- **Coin Detail Pages** — Per-coin price chart with period selector, key stats (market cap, ATH, 24h high/low, rank), and a short description
+- **Live data** — All data sourced from the [CoinGecko public API](https://www.coingecko.com/en/api), displayed in AUD
+
+## Tech Stack
+
+| Layer | Library |
+|---|---|
+| UI framework | React 18 |
+| Component library | MUI v5 (Material UI) |
+| Routing | React Router v6 |
+| Charts | Recharts |
+| Styling | MUI styled-components + global CSS |
+| Data | CoinGecko REST API |
+
+## Architecture
+
+The project follows **Atomic Design** principles:
+
+```
+src/
+├── hooks/               # Data-fetching hooks (useCryptoList, useCryptoDetails, useCoinChart)
+├── components/
+│   ├── atoms/           # Spinner, CoinImage, NavLogo, SearchBar, PaginationControl
+│   ├── molecules/       # CryptoRow, CryptoTableHeader, NavMenu
+│   ├── organisms/       # Navbar, CryptoTable, BitcoinChart, TopMovers, MarketOverview, CryptoDetailsCard
+│   └── templates/       # MainLayout
+└── pages/               # Home, CryptoDetails
+```
+
+## Getting Started
+
+```bash
+cd crypto_project
+npm install
+npm start
+```
+
+App runs at `http://localhost:3000`.
