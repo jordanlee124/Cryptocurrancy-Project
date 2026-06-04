@@ -4,7 +4,7 @@ import NavLogo from "../../atoms/NavLogo/NavLogo";
 import NavMenu from "../../molecules/NavMenu/NavMenu";
 import { NavBar, NavContainer, NavLink } from "./NavbarStyle";
 
-const pages = ['Home', 'Pricing', 'Blog'];
+const pages = ['Home'];
 
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
